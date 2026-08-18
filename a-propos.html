@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — iLynx</title>
+<meta name="description" content="iLynx, entreprise technologique française spécialisée en solutions SaaS et développement web sur mesure.">
+<link rel="canonical" href="https://www.ilynx.fr/a-propos">
+<link rel="icon" href="assets/ilynx-logo.svg">
+<meta name="theme-color" content="#2563EB">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/utilities.css">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container flex items-center justify-between" style="height:76px">
+    <a href="index.html" class="flex items-center gap-2" aria-label="iLynx — accueil"><img src="assets/ilynx-logo.svg" alt="iLynx" style="height:34px"></a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="nav-link" href="index.html">Accueil</a>
+      <a class="nav-link" href="solutions.html">Solutions SaaS</a>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link" href="a-propos.html">À propos</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </nav>
+    <div class="hidden md:flex"><a href="contact.html" class="btn btn-primary">Parler à un expert</a></div>
+    <button class="md:hidden" data-menu-toggle aria-label="Ouvrir le menu" aria-expanded="false" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="md:hidden glass" data-mobile-menu style="max-height:0; overflow:hidden; transition:max-height .3s ease; border-top:1px solid var(--card-border)">
+    <nav class="container flex flex-col gap-1 py-4">
+      <a class="nav-link py-3" href="index.html">Accueil</a>
+      <a class="nav-link py-3" href="solutions.html">Solutions SaaS</a>
+      <a class="nav-link py-3" href="services.html">Services</a>
+      <a class="nav-link py-3" href="a-propos.html">À propos</a>
+      <a class="nav-link py-3" href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary justify-center mt-2">Parler à un expert</a>
+    </nav>
+  </div>
+</header>
+
+<section class="container reveal" style="padding:88px 24px 96px">
+  <span class="hero-badge">À propos</span>
+  <h1 class="mt-6" style="font-size:clamp(2rem,4vw,3.2rem)">Une équipe tech au service de votre croissance</h1>
+  <p class="mt-4" style="color:var(--muted); max-width:65ch; font-size:17px">iLynx est une entreprise technologique française qui conçoit des solutions SaaS propriétaires et développe des applications web sur mesure. Notre mission : transformer des idées métier en produits digitaux performants, simples à utiliser et pensés pour durer.</p>
+  <div class="grid md:grid-cols-4 gap-6 mt-12">
+    <div class="card" style="--card-accent:var(--accent-blue)"><p style="font-size:28px;font-weight:800">100%</p><p style="color:var(--muted);font-size:14px">Conçu et développé en France</p></div>
+    <div class="card" style="--card-accent:var(--accent-cyan)"><p style="font-size:28px;font-weight:800">3</p><p style="color:var(--muted);font-size:14px">Solutions SaaS propriétaires</p></div>
+    <div class="card" style="--card-accent:var(--accent-violet)"><p style="font-size:28px;font-weight:800">2</p><p style="color:var(--muted);font-size:14px">Expertises : SaaS &amp; Web</p></div>
+    <div class="card" style="--card-accent:var(--accent-green)"><p style="font-size:28px;font-weight:800">100%</p><p style="color:var(--muted);font-size:14px">Sur mesure, à chaque projet</p></div>
+  </div>
+</section>
+
+<footer style="padding:64px 0 32px">
+  <div class="container grid md:grid-cols-4 gap-10">
+    <div><img src="assets/ilynx-logo.svg" alt="iLynx" style="height:30px"><p class="mt-4" style="color:var(--muted); font-size:14px; max-width:32ch">Solutions SaaS &amp; développement web sur mesure.</p></div>
+    <div><h3 style="font-size:14px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted)">Solutions</h3>
+      <ul class="mt-4 flex flex-col gap-2">
+        <li><a class="nav-link" href="solutions/rh.html">iLynx RH</a></li>
+        <li><a class="nav-link" href="solutions/dsd.html">iLynx DSD</a></li>
+        <li><a class="nav-link" href="solutions/crm.html">iLynx CRM</a></li>
+      </ul>
+    </div>
+    <div><h3 style="font-size:14px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted)">Services</h3>
+      <ul class="mt-4 flex flex-col gap-2">
+        <li><a class="nav-link" href="services/developpement-saas.html">Développement SaaS</a></li>
+        <li><a class="nav-link" href="services/developpement-web.html">Développement Web</a></li>
+      </ul>
+    </div>
+    <div><h3 style="font-size:14px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted)">Entreprise</h3>
+      <ul class="mt-4 flex flex-col gap-2">
+        <li><a class="nav-link" href="a-propos.html">À propos</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="rainbow-rule mt-12"></div>
+  <p class="container mt-6" style="color:var(--muted); font-size:13px">© <span data-year></span> iLynx. Tous droits réservés.</p>
+</footer>
+<script src="assets/main.js"></script>
+</body>
+</html>
