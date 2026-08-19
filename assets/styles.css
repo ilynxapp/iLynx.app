@@ -395,3 +395,145 @@ footer .container:first-child::before,
 
 /* Le dashboard reste masqué conformément au nouveau concept de plateforme. */
 .dash, .hero .dash, .hero [class*="dash"] { display: none !important; }
+
+
+/* Correction responsive globale : aucun contenu ne doit dépasser la largeur de l’écran. */
+html,
+body { max-width: 100%; overflow-x: hidden; }
+main,
+section,
+header,
+footer { max-width: 100%; }
+.container,
+.container * { min-width: 0; }
+
+.hero h1,
+h1,
+h2,
+h3,
+p,
+a { overflow-wrap: break-word; }
+
+@media (max-width: 767px) {
+  .container { width: calc(100% - 32px); max-width: 100%; }
+  .hero { width: 100%; overflow: hidden; padding: 72px 0 78px; }
+  .hero > .container { width: calc(100% - 32px); }
+  .hero h1 {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px 0 18px;
+    font-size: clamp(2.55rem, 10.8vw, 4.15rem);
+    line-height: 1.02;
+    letter-spacing: -.065em;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    text-wrap: wrap;
+  }
+  .hero p { width: 100%; max-width: 100%; font-size: 1rem; }
+  .hero-badge { max-width: 100%; font-size: 10px; letter-spacing: .06em; }
+  .hero .btn { display: flex; width: 100%; max-width: 100%; margin-right: 0; }
+  .hero::before { right: -62%; width: 126vw; height: 126vw; }
+  .hero::after { right: -18%; width: 250px; height: 250px; }
+  main > section:not(.hero) { width: 100%; overflow: hidden; }
+  main > section:not(.hero) h2 { max-width: 100%; font-size: clamp(2.2rem, 10.5vw, 3.4rem); line-height: 1.03; }
+  .card { width: 100%; max-width: 100%; overflow: hidden; }
+  .card p { overflow-wrap: break-word; }
+  .site-header > .container { width: calc(100% - 24px); }
+  .site-header img { width: 148px; height: 46px; }
+  footer img, .site-footer img { width: 166px; max-width: 100%; }
+}
+
+@media (min-width: 768px) {
+  .hero h1 { max-width: min(820px, 100%); }
+}
+
+
+/* Thème partagé des pages annexes : solutions, services, entreprise et contact. */
+body:not(:has(.hero)) main {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  padding: clamp(86px, 11vw, 150px) 28px clamp(90px, 12vw, 150px);
+}
+body:not(:has(.hero)) main h1 {
+  max-width: 900px;
+  margin: 18px 0 20px;
+  color: var(--ink);
+  font-size: clamp(3rem, 7vw, 6.8rem);
+  font-weight: 720;
+  letter-spacing: -.075em;
+  line-height: .98;
+  text-wrap: balance;
+}
+body:not(:has(.hero)) main > p,
+body:not(:has(.hero)) main h1 + p {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+body:not(:has(.hero)) main ul {
+  max-width: 780px;
+  margin: 28px 0;
+  padding: 28px 34px 28px 52px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+body:not(:has(.hero)) main li { margin: 12px 0; color: var(--ink-soft); }
+body:not(:has(.hero)) main li::marker { color: var(--blue); }
+body:not(:has(.hero)) main > a.btn,
+body:not(:has(.hero)) main a.btn { margin-top: 16px; }
+body:not(:has(.hero)) main form {
+  max-width: 720px;
+  margin-top: 28px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+body:not(:has(.hero)) main input,
+body:not(:has(.hero)) main textarea,
+body:not(:has(.hero)) main select {
+  width: 100%;
+  max-width: 100%;
+  margin: 7px 0 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--line-dark);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+body:not(:has(.hero)) main input:focus,
+body:not(:has(.hero)) main textarea:focus,
+body:not(:has(.hero)) main select:focus { outline: 3px solid rgba(23,105,224,.18); border-color: var(--blue); }
+body:not(:has(.hero)) main textarea { min-height: 150px; resize: vertical; }
+body:not(:has(.hero)) footer { margin-top: 0; }
+
+@media (max-width: 767px) {
+  body:not(:has(.hero)) main {
+    width: 100%;
+    padding: 72px 16px 86px;
+    overflow: hidden;
+  }
+  body:not(:has(.hero)) main h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2.65rem, 12vw, 4.5rem);
+    line-height: 1.02;
+    text-wrap: wrap;
+    overflow-wrap: normal;
+  }
+  body:not(:has(.hero)) main > p,
+  body:not(:has(.hero)) main h1 + p { width: 100%; max-width: 100%; font-size: 1rem; }
+  body:not(:has(.hero)) main ul { padding: 22px 20px 22px 38px; border-radius: 22px; }
+  body:not(:has(.hero)) main form { padding: 22px; border-radius: 22px; }
+}
+
+/* Compatibilité : si le navigateur ne prend pas en charge :has(), les pages restent lisibles. */
+@supports not selector(body:has(.hero)) {
+  body:not(.home) main { width: min(100%, 1180px); margin: 0 auto; padding: 100px 28px; }
+}
