@@ -731,3 +731,43 @@ section.container.reveal:has(svg[viewBox="0 0 600 400"]) svg text { animation: e
   .ecosystem-network .eco-core,
   .ecosystem-network .eco-node { animation: none !important; }
 }
+
+
+/* Correction définitive du réseau : les libellés doivent être au-dessus des cercles. */
+.ecosystem-network .eco-node,
+.ecosystem-network .eco-core {
+  transform: none !important;
+  transform-box: fill-box !important;
+  animation: eco-opacity-pulse 4.8s ease-in-out infinite !important;
+}
+.ecosystem-network .eco-node > circle {
+  transform: none !important;
+}
+.ecosystem-network .eco-node > text,
+.ecosystem-network .eco-node > text tspan,
+.ecosystem-network .eco-core-label {
+  position: relative;
+  z-index: 20;
+  fill: #ffffff !important;
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  stroke-width: .18px;
+  paint-order: stroke fill;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+  font-weight: 800 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.65);
+}
+.ecosystem-network .eco-node > text { font-size: 9px !important; }
+.ecosystem-network .eco-node > text tspan + tspan { font-size: 7px !important; font-weight: 600 !important; }
+.ecosystem-network .eco-core-label { font-size: 14px !important; }
+@keyframes eco-opacity-pulse {
+  0%, 100% { opacity: .92; }
+  50% { opacity: 1; }
+}
+@media (max-width: 767px) {
+  .ecosystem-network .eco-node,
+  .ecosystem-network .eco-core { transform: none !important; }
+  .ecosystem-network .eco-node > text { font-size: 8px !important; }
+  .ecosystem-network .eco-node > text tspan + tspan { font-size: 6.5px !important; }
+  .ecosystem-network .eco-core-label { font-size: 13px !important; }
+}
