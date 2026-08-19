@@ -1095,3 +1095,23 @@ body {
   .offer-card__brand { height: 34px; margin-bottom: 7px; }
   .offer-card__brand img { width: 112px; height: 34px; transform: scale(1.1); }
 }
+
+/* ===== Cartes hero : message et démarche clairs ===== */
+.offer-card strong { display: block; max-width: 100%; font-size: 17px; line-height: 1.18; letter-spacing: -.02em; }
+.offer-card small { display: block; max-width: 100%; font-size: 11px; line-height: 1.45; }
+.offer-card__step { display: block; margin-top: 12px; color: #7896bf; font-size: 9px; font-weight: 800; letter-spacing: .01em; line-height: 1.35; }
+.offer-card--saas .offer-card__step { color: #b8d4ff; }
+.offer-card b { display: block; margin-top: auto; max-width: 100%; font-size: 11px; line-height: 1.25; }
+.offer-card--custom { background: linear-gradient(145deg, rgba(255,255,255,.92), rgba(235,244,255,.66)); border-color: rgba(255,255,255,.92); }
+@media (max-width: 767px) {
+  .offer-stage { min-height: 470px; }
+  .offer-card { width: 150px; min-height: 188px; padding: 14px; }
+  .offer-card--saas { left: 0; }
+  .offer-card--custom { right: 0; }
+  .offer-card strong { font-size: 13px; line-height: 1.2; }
+  .offer-card small { font-size: 9px; line-height: 1.4; }
+  .offer-card__step { margin-top: 9px; font-size: 7px; line-height: 1.45; }
+  .offer-card b { padding-top: 10px; font-size: 9px; }
+  .offer-card__brand { height: 32px; }
+  .offer-card__brand img { width: 108px; height: 32px; }
+}
