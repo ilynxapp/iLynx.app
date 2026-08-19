@@ -20,88 +20,46 @@
 <body>
 
 <!-- ===== HEADER ===== -->
-<header class="site-header">
-  <div class="container flex items-center justify-between" style="height:76px">
-    <a href="index.html" class="flex items-center gap-2" aria-label="iLynx — accueil">
-      <img src="assets/iLynx-logo-light.png" alt="iLynx" style="height:96px">
+<header class="site-header site-header--premium">
+  <div class="container site-header__inner">
+    <a href="index.html" class="brand-lockup" aria-label="iLynx — accueil">
+      <span class="brand-mark"><img src="assets/favicon.png" alt=""></span>
+      <span class="brand-name">iLynx</span>
     </a>
-    <nav class="hidden md:flex items-center gap-8" aria-label="Navigation principale">
-      <a class="nav-link" href="index.html">Accueil</a>
-      <a class="nav-link" href="solutions.html">Solutions SaaS</a>
-      <a class="nav-link" href="services.html">Services</a>
-      <a class="nav-link" href="a-propos.html">À propos</a>
-      <a class="nav-link" href="contact.html">Contact</a>
+    <nav class="top-nav" aria-label="Navigation principale">
+      <a class="top-nav__link is-active" href="index.html">Accueil</a>
+      <a class="top-nav__link" href="solutions.html">Nos solutions</a>
+      <a class="top-nav__link" href="services.html">Nos services</a>
+      <a class="top-nav__link" href="a-propos.html">À propos de nous</a>
+      <a class="top-nav__link" href="contact.html">Contact</a>
     </nav>
-    <div class="hidden md:flex">
-      <a href="contact.html" class="btn btn-primary">Parler à un expert</a>
-    </div>
-    <button class="md:hidden" data-menu-toggle aria-label="Ouvrir le menu" aria-expanded="false" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-    </button>
+    <a href="contact.html" class="header-cta">Parler à un expert <span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle md:hidden" data-menu-toggle aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
   </div>
-  <div class="md:hidden glass" data-mobile-menu style="max-height:0; overflow:hidden; transition:max-height .3s ease; border-top:1px solid var(--card-border)">
-    <nav class="container flex flex-col gap-1 py-4" aria-label="Navigation mobile">
-      <a class="nav-link py-3" href="index.html">Accueil</a>
-      <a class="nav-link py-3" href="solutions.html">Solutions SaaS</a>
-      <a class="nav-link py-3" href="services.html">Services</a>
-      <a class="nav-link py-3" href="a-propos.html">À propos</a>
-      <a class="nav-link py-3" href="contact.html">Contact</a>
-      <a href="contact.html" class="btn btn-primary justify-center mt-2">Parler à un expert</a>
+  <div class="mobile-panel md:hidden" data-mobile-menu>
+    <nav class="container mobile-panel__nav" aria-label="Navigation mobile">
+      <a href="index.html">Accueil</a><a href="solutions.html">Nos solutions</a><a href="services.html">Nos services</a><a href="a-propos.html">À propos de nous</a><a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Parler à un expert</a>
     </nav>
   </div>
 </header>
 
 <!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="mesh" aria-hidden="true"></div>
-  <canvas id="binary-canvas" aria-hidden="true"></canvas>
-  <span class="code-symbol" aria-hidden="true" style="top:14%;left:6%;font-size:34px;color:var(--accent-blue)">{ }</span>
-  <span class="code-symbol" aria-hidden="true" style="top:64%;left:10%;font-size:26px;color:var(--accent-green);animation-delay:1s">&lt;/&gt;</span>
-  <span class="code-symbol" aria-hidden="true" style="top:22%;right:8%;font-size:30px;color:var(--accent-violet);animation-delay:2s">01</span>
-  <span class="code-symbol" aria-hidden="true" style="top:72%;right:14%;font-size:24px;color:var(--accent-cyan);animation-delay:.5s">$_</span>
-
-  <div class="container relative grid md:grid-cols-2 gap-14 items-center" style="z-index:1">
-    <div>
-      <span class="hero-badge">SaaS • Web • Innovation</span>
-      <h1 class="mt-6" data-letters>Des solutions digitales qui font avancer votre entreprise.</h1>
-      <p class="mt-6" style="color:var(--muted); font-size:18px; max-width:52ch">
-        iLynx conçoit des solutions SaaS modernes et développe des applications web sur mesure pour transformer vos idées en produits performants.
-      </p>
-      <div class="flex flex-wrap gap-4 mt-8">
-        <a href="solutions.html" class="btn btn-primary">Découvrir nos solutions</a>
-        <a href="contact.html" class="btn btn-ghost">Développer mon projet</a>
-      </div>
+<section class="hero hero--conversion">
+  <div class="hero__glow hero__glow--one" aria-hidden="true"></div><div class="hero__glow hero__glow--two" aria-hidden="true"></div>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <span class="hero-badge">L’avenir de vos outils commence ici</span>
+      <h1>Votre idée mérite une <span>solution qui travaille pour vous.</span></h1>
+      <p class="hero__lead">Adoptez une solution SaaS prête à l’emploi ou transformez votre vision en application performante, conçue par iLynx.</p>
+      <div class="hero__actions"><a href="solutions.html" class="btn btn-primary">Explorer nos solutions <span aria-hidden="true">→</span></a><a href="contact.html" class="btn btn-ghost">Développer mon application</a></div>
+      <div class="hero__proof"><span class="proof-dot"></span><span>Solutions évolutives</span><span class="proof-separator">•</span><span>Accompagnement humain</span><span class="proof-separator">•</span><span>Technologie fiable</span></div>
     </div>
-
-    <div class="dash p-6" aria-hidden="true">
-      <div class="flex items-center justify-between mb-5">
-        <div class="flex gap-2">
-          <span style="width:10px;height:10px;border-radius:999px;background:var(--accent-orange)"></span>
-          <span style="width:10px;height:10px;border-radius:999px;background:var(--accent-green)"></span>
-          <span style="width:10px;height:10px;border-radius:999px;background:var(--accent-blue)"></span>
-        </div>
-        <span style="font-size:12px;color:var(--muted)">iLynx • dashboard</span>
-      </div>
-      <div class="grid grid-cols-3 gap-4 mb-5">
-        <div class="card p-4" style="--card-accent:var(--accent-blue)">
-          <p style="font-size:11px;color:var(--muted)">Utilisateurs actifs</p>
-          <p style="font-size:22px;font-weight:800">12 480</p>
-        </div>
-        <div class="card p-4" style="--card-accent:var(--accent-cyan)">
-          <p style="font-size:11px;color:var(--muted)">Uptime</p>
-          <p style="font-size:22px;font-weight:800">99,98%</p>
-        </div>
-        <div class="card p-4" style="--card-accent:var(--accent-violet)">
-          <p style="font-size:11px;color:var(--muted)">Déploiements</p>
-          <p style="font-size:22px;font-weight:800">+38</p>
-        </div>
-      </div>
-      <div class="flex flex-col gap-2">
-        <div class="dash-bar" style="width:92%"></div>
-        <div class="dash-bar" style="width:68%; background:linear-gradient(90deg,var(--accent-violet),var(--accent-cyan))"></div>
-        <div class="dash-bar" style="width:80%; background:linear-gradient(90deg,var(--accent-green),var(--accent-cyan))"></div>
-        <div class="dash-bar" style="width:45%; background:linear-gradient(90deg,var(--accent-orange),var(--accent-violet))"></div>
-      </div>
+    <div class="offer-stage" aria-label="Choisissez votre parcours">
+      <div class="offer-stage__orbit offer-stage__orbit--outer"></div><div class="offer-stage__orbit offer-stage__orbit--inner"></div>
+      <div class="offer-center"><span>iLynx</span><small>Votre partenaire digital</small></div>
+      <a class="offer-card offer-card--saas" href="solutions.html"><span class="offer-card__icon">✦</span><strong>Choisir une solution SaaS</strong><small>Des outils prêts à accélérer votre activité</small><b>Voir les solutions&nbsp; ↗</b></a>
+      <a class="offer-card offer-card--custom" href="contact.html"><span class="offer-card__icon">⌘</span><strong>Créer mon application</strong><small>Une plateforme pensée pour votre métier</small><b>Parler de mon projet&nbsp; ↗</b></a>
     </div>
   </div>
 </section>
