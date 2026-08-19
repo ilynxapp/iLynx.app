@@ -838,3 +838,12 @@ section.container.reveal:has(svg[viewBox="0 0 600 400"]) svg text { animation: e
 @media (max-width: 767px) {
   .brand-logo-frame { width: 142px; height: 54px; padding: 7px 11px; border-radius: 0 0 15px 15px; }
 }
+
+
+/* Logo plus remarquable dans l’étiquette noire. */
+.brand-logo-frame { width: 208px; height: 68px; padding: 3px 7px; border-radius: 0 0 20px 20px; }
+.brand-logo-frame img { width: 100%; height: 100%; object-fit: contain; transform: scale(1.18); transform-origin: center; }
+@media (max-width: 767px) {
+  .brand-logo-frame { width: 184px; height: 62px; padding: 2px 5px; border-radius: 0 0 18px 18px; }
+  .brand-logo-frame img { transform: scale(1.18); }
+}
