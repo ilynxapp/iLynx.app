@@ -537,3 +537,93 @@ body:not(:has(.hero)) footer { margin-top: 0; }
 @supports not selector(body:has(.hero)) {
   body:not(.home) main { width: min(100%, 1180px); margin: 0 auto; padding: 100px 28px; }
 }
+
+
+/* Écosystème connecté — réseau vivant et animé */
+section.container.reveal:has(svg[viewBox="0 0 600 400"]) {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+section.container.reveal:has(svg[viewBox="0 0 600 400"])::before,
+section.container.reveal:has(svg[viewBox="0 0 600 400"])::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  width: min(520px, 72vw);
+  aspect-ratio: 1;
+  border: 1px solid rgba(23,105,224,.11);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  animation: ecosystem-orbit 22s linear infinite;
+}
+section.container.reveal:has(svg[viewBox="0 0 600 400"])::after {
+  width: min(390px, 55vw);
+  border-color: rgba(118,88,216,.14);
+  animation-direction: reverse;
+  animation-duration: 16s;
+}
+section.container.reveal:has(svg[viewBox="0 0 600 400"]) svg {
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+  filter: drop-shadow(0 14px 28px rgba(23,105,224,.06));
+}
+section.container.reveal:has(svg[viewBox="0 0 600 400"]) .eco-line {
+  stroke-dasharray: 12 10;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: ecosystem-line 5s ease-in-out infinite alternate, ecosystem-flow 3.5s linear infinite;
+}
+section.container.reveal:has(svg[viewBox="0 0 600 400"]) .eco-line:nth-of-type(2) { animation-delay: -.9s, -.7s; }
+section.container.reveal:has(svg[viewBox="0 0 600 400"]) .eco-line:nth-of-type(3) { animation-delay: -1.8s, -1.4s; }
+section.container.reveal:has(svg[viewBox="0 0 600 400"]) .eco-core {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ecosystem-core 4.2s ease-in-out infinite;
+}
+section.container.reveal:has(svg[viewBox="0 0 600 400"]) svg circle:not(.eco-core) {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ecosystem-node 4.8s ease-in-out infinite;
+}
+section.container.reveal:has(svg[viewBox="0 0 600 400"]) svg circle:nth-of-type(2) { animation-delay: -.8s; }
+section.container.reveal:has(svg[viewBox="0 0 600 400"]) svg circle:nth-of-type(3) { animation-delay: -1.6s; }
+section.container.reveal:has(svg[viewBox="0 0 600 400"]) svg circle:nth-of-type(4) { animation-delay: -2.4s; }
+section.container.reveal:has(svg[viewBox="0 0 600 400"]) svg text { animation: ecosystem-label 5s ease-in-out infinite; }
+
+@keyframes ecosystem-line {
+  0% { opacity: .38; stroke-width: 1.5; }
+  50% { opacity: 1; stroke-width: 3; }
+  100% { opacity: .52; stroke-width: 2; }
+}
+@keyframes ecosystem-flow { to { stroke-dashoffset: -44; } }
+@keyframes ecosystem-orbit {
+  from { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  to { transform: translate(-50%, -50%) rotate(360deg) scale(1.04); }
+}
+@keyframes ecosystem-core {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(23,105,224,0)); }
+  50% { transform: scale(1.08); filter: drop-shadow(0 0 16px rgba(23,105,224,.46)); }
+}
+@keyframes ecosystem-node {
+  0%, 100% { transform: scale(1); opacity: .82; }
+  50% { transform: scale(1.16); opacity: 1; }
+}
+@keyframes ecosystem-label {
+  0%, 100% { opacity: .76; }
+  50% { opacity: 1; }
+}
+@media (max-width: 767px) {
+  section.container.reveal:has(svg[viewBox="0 0 600 400"])::before { width: 125vw; top: 56%; }
+  section.container.reveal:has(svg[viewBox="0 0 600 400"])::after { width: 92vw; top: 56%; }
+  section.container.reveal:has(svg[viewBox="0 0 600 400"]) svg { width: 100%; height: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  section.container.reveal:has(svg[viewBox="0 0 600 400"])::before,
+  section.container.reveal:has(svg[viewBox="0 0 600 400"])::after,
+  section.container.reveal:has(svg[viewBox="0 0 600 400"]) * { animation: none !important; }
+}
