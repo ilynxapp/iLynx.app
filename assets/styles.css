@@ -1031,3 +1031,67 @@ body {
   .hero::after { animation: none !important; }
   .card::after, .offer-card::after, .solutions-showcase .card::after, .services-showcase .card::after { display: none; }
 }
+
+/* ===== Correction logo lisibilité + navigation mobile ===== */
+.offer-center { overflow: hidden; color: #111318; background: rgba(255,255,255,.72); }
+.offer-center__logo { display: block; width: 112px; height: auto; max-width: 88%; object-fit: contain; }
+.offer-center small { color: #586274; }
+.brand-logo-frame { width: 238px; height: 76px; padding: 0; overflow: hidden; }
+.brand-logo-frame img { width: 100%; height: 100%; max-width: none; padding: 0; object-fit: contain; transform: scale(1.42); transform-origin: center; }
+.site-header__inner { min-width: 0; max-width: 100%; overflow: visible; }
+.site-header .container { max-width: 100%; }
+@media (max-width: 767px) {
+  .site-header__inner { width: calc(100% - 20px); height: 70px; }
+  .brand-logo-frame { width: 210px; height: 70px; }
+  .brand-logo-frame img { transform: scale(1.42); }
+  .hero__grid { width: 100%; max-width: 100%; overflow: hidden; }
+  .offer-stage { width: min(100%, 360px); max-width: 100%; min-height: 430px; margin-inline: auto; transform: none; overflow: hidden; }
+  .offer-stage__orbit--outer { width: 330px; height: 330px; }
+  .offer-stage__orbit--inner { width: 220px; height: 220px; }
+  .offer-card { width: 142px; min-height: 142px; padding: 13px; border-radius: 18px; }
+  .offer-card--saas { left: 0; }
+  .offer-card--custom { right: 0; }
+  .offer-card strong { font-size: 12px; }
+  .offer-card small { font-size: 9px; }
+  .offer-card b { font-size: 9px; }
+  .offer-center { width: 100px; height: 100px; border-radius: 28px; }
+  .offer-center__logo { width: 86px; }
+  .offer-center small { font-size: 8px; }
+  .hero, .hero__grid, main { overflow-x: hidden; }
+  body { overflow-x: hidden; }
+}
+
+/* ===== Correctif final : header propre + carte SaaS noire ===== */
+.site-header__inner { display: flex; flex-wrap: nowrap; align-items: center; gap: 14px; }
+.brand-lockup { flex: 0 0 auto; }
+.top-nav { flex: 1 1 auto; min-width: 0; flex-wrap: nowrap; white-space: nowrap; justify-content: center; }
+.top-nav__link { flex: 0 0 auto; white-space: nowrap; }
+.header-cta { flex: 0 0 auto; white-space: nowrap; }
+.menu-toggle { flex: 0 0 42px; width: 42px; height: 42px; }
+.offer-card--saas {
+  color: #fff;
+  background: linear-gradient(145deg, #07090d 0%, #121722 58%, #1d2d49 100%);
+  border-color: rgba(255,255,255,.2);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,.16), 0 22px 50px rgba(15,23,42,.28);
+}
+.offer-card--saas:hover { color: #fff; background: linear-gradient(145deg, #0b0d12, #17233a 65%, #244777); }
+.offer-card--saas small { color: #c7d1df; }
+.offer-card--saas b { color: #8dc0ff; }
+.offer-card__brand { width: 100%; height: 42px; display: flex; align-items: center; justify-content: flex-start; margin: -2px 0 10px; overflow: hidden; border-radius: 10px; background: #050608; }
+.offer-card__brand img { width: 132px; height: 42px; max-width: none; object-fit: contain; transform: scale(1.16); transform-origin: left center; }
+.offer-card--saas .offer-card__icon { width: 30px; height: 30px; margin-bottom: 10px; color: #fff; background: linear-gradient(135deg, #246cf0, #7539c5); }
+@media (max-width: 1120px) and (min-width: 768px) {
+  .site-header__inner { gap: 8px; }
+  .brand-logo-frame { width: 190px; }
+  .top-nav__link { padding-inline: 7px; font-size: 11px; }
+  .header-cta { padding-inline: 10px; font-size: 11px; }
+}
+@media (max-width: 767px) {
+  .site-header__inner { width: calc(100% - 20px); gap: 8px; }
+  .brand-logo-frame { width: 170px; height: 62px; }
+  .brand-logo-frame img { transform: scale(1.48); }
+  .menu-toggle { margin-left: auto; display: inline-flex; }
+  .offer-card--saas { min-height: 160px; }
+  .offer-card__brand { height: 34px; margin-bottom: 7px; }
+  .offer-card__brand img { width: 112px; height: 34px; transform: scale(1.1); }
+}
