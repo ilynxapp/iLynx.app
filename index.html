@@ -144,22 +144,28 @@
     <p class="mt-3" style="color:var(--muted)">Toutes les solutions iLynx partagent un socle commun et communiquent entre elles.</p>
   </div>
   <div class="flex justify-center mt-10">
-    <svg viewBox="0 0 600 400" style="width:100%; max-width:640px" aria-hidden="true">
-      <line class="eco-line" x1="300" y1="200" x2="130" y2="90" stroke="var(--accent-blue)" stroke-width="2" fill="none"/>
-      <line class="eco-line" x1="300" y1="200" x2="470" y2="90" stroke="var(--accent-cyan)" stroke-width="2" fill="none" style="animation-delay:.6s"/>
-      <line class="eco-line" x1="300" y1="200" x2="300" y2="330" stroke="var(--accent-violet)" stroke-width="2" fill="none" style="animation-delay:1.2s"/>
-
-      <circle class="eco-core" cx="300" cy="200" r="34" fill="var(--accent-blue)"/>
-      <text x="300" y="205" text-anchor="middle" fill="#fff" font-weight="700" font-size="13" font-family="Montserrat">iLynx</text>
-
-      <circle cx="130" cy="90" r="24" fill="var(--card)" stroke="var(--accent-blue)" stroke-width="2"/>
-      <text x="130" y="95" text-anchor="middle" fill="var(--text)" font-weight="700" font-size="11" font-family="Montserrat">RH</text>
-
-      <circle cx="470" cy="90" r="24" fill="var(--card)" stroke="var(--accent-cyan)" stroke-width="2"/>
-      <text x="470" y="95" text-anchor="middle" fill="var(--text)" font-weight="700" font-size="11" font-family="Montserrat">DSD</text>
-
-      <circle cx="300" cy="330" r="24" fill="var(--card)" stroke="var(--accent-violet)" stroke-width="2"/>
-      <text x="300" y="335" text-anchor="middle" fill="var(--text)" font-weight="700" font-size="11" font-family="Montserrat">CRM</text>
+    <svg class="ecosystem-network" viewBox="0 0 700 500" role="img" aria-label="Écosystème iLynx connecté">
+      <defs>
+        <linearGradient id="eco-gradient-blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent-blue)"/><stop offset="1" stop-color="var(--accent-violet)"/></linearGradient>
+        <filter id="eco-glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <g class="ecosystem-connections" fill="none" stroke="url(#eco-gradient-blue)" stroke-width="2">
+        <line class="eco-line" x1="350" y1="250" x2="110" y2="95"/><line class="eco-line" x1="350" y1="250" x2="350" y2="60"/><line class="eco-line" x1="350" y1="250" x2="590" y2="95"/><line class="eco-line" x1="350" y1="250" x2="110" y2="405"/><line class="eco-line" x1="350" y1="250" x2="350" y2="440"/><line class="eco-line" x1="350" y1="250" x2="590" y2="405"/><line class="eco-line eco-cross" x1="110" y1="95" x2="590" y2="95"/><line class="eco-line eco-cross" x1="110" y1="405" x2="590" y2="405"/>
+      </g>
+      <g class="eco-particles" fill="var(--accent-cyan)" filter="url(#eco-glow)">
+        <circle class="eco-particle" r="4"><animateMotion dur="4s" repeatCount="indefinite" path="M350 250 L110 95"/></circle><circle class="eco-particle" r="4"><animateMotion dur="5s" begin="-1.5s" repeatCount="indefinite" path="M350 250 L590 95"/></circle><circle class="eco-particle" r="4"><animateMotion dur="4.5s" begin="-2s" repeatCount="indefinite" path="M350 250 L110 405"/></circle><circle class="eco-particle" r="4"><animateMotion dur="5.5s" begin="-2.8s" repeatCount="indefinite" path="M350 250 L590 405"/></circle>
+      </g>
+      <g class="eco-orbit eco-orbit-one" fill="none" stroke="var(--accent-blue)" stroke-opacity=".18"><ellipse cx="350" cy="250" rx="238" ry="145"/></g>
+      <g class="eco-orbit eco-orbit-two" fill="none" stroke="var(--accent-violet)" stroke-opacity=".16"><ellipse cx="350" cy="250" rx="165" ry="218"/></g>
+      <g class="eco-nodes">
+        <circle class="eco-core" cx="350" cy="250" r="42" fill="var(--accent-blue)"/><text class="eco-core-label" x="350" y="256" text-anchor="middle" fill="#fff" font-weight="700" font-size="14">iLynx</text>
+        <g class="eco-node"><circle cx="110" cy="95" r="28" fill="var(--card)" stroke="var(--accent-blue)" stroke-width="2"/><text x="110" y="100" text-anchor="middle" fill="var(--text)" font-weight="700" font-size="11">RH</text></g>
+        <g class="eco-node"><circle cx="350" cy="60" r="28" fill="var(--card)" stroke="var(--accent-cyan)" stroke-width="2"/><text x="350" y="65" text-anchor="middle" fill="var(--text)" font-weight="700" font-size="11">DSD</text></g>
+        <g class="eco-node"><circle cx="590" cy="95" r="28" fill="var(--card)" stroke="var(--accent-violet)" stroke-width="2"/><text x="590" y="100" text-anchor="middle" fill="var(--text)" font-weight="700" font-size="11">CRM</text></g>
+        <g class="eco-node"><circle cx="110" cy="405" r="28" fill="var(--card)" stroke="var(--accent-green)" stroke-width="2"/><text x="110" y="410" text-anchor="middle" fill="var(--text)" font-weight="700" font-size="11">WEB</text></g>
+        <g class="eco-node"><circle cx="350" cy="440" r="28" fill="var(--card)" stroke="var(--accent-orange)" stroke-width="2"/><text x="350" y="445" text-anchor="middle" fill="var(--text)" font-weight="700" font-size="11">SaaS</text></g>
+        <g class="eco-node"><circle cx="590" cy="405" r="28" fill="var(--card)" stroke="var(--accent-cyan)" stroke-width="2"/><text x="590" y="410" text-anchor="middle" fill="var(--text)" font-weight="700" font-size="11">API</text></g>
+      </g>
     </svg>
   </div>
   <div class="text-center mt-6">
