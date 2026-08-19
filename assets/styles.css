@@ -668,3 +668,66 @@ section.container.reveal:has(svg[viewBox="0 0 600 400"]) svg text { animation: e
   .ecosystem-network .eco-orbit-one,
   .ecosystem-network .eco-orbit-two { animation: none !important; }
 }
+
+
+/* Correctif mobile final pour l’écosystème : cadrage, lisibilité et stabilité des nœuds. */
+.ecosystem-network {
+  display: block;
+  width: min(700px, 100%);
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+  overflow: hidden;
+}
+.ecosystem-network .eco-core,
+.ecosystem-network .eco-node {
+  transform-box: view-box;
+}
+.ecosystem-network .eco-core { animation: ecosystem-core-safe 4.2s ease-in-out infinite; }
+.ecosystem-network .eco-node { animation: ecosystem-node-safe 4.8s ease-in-out infinite; }
+.ecosystem-network .eco-node text {
+  dominant-baseline: middle;
+  text-anchor: middle;
+  font-size: 10px !important;
+  letter-spacing: -.2px;
+}
+.ecosystem-network .eco-particle { r: 4px; }
+@keyframes ecosystem-core-safe {
+  0%, 100% { opacity: .94; }
+  50% { opacity: 1; filter: drop-shadow(0 0 12px rgba(23,105,224,.42)); }
+}
+@keyframes ecosystem-node-safe {
+  0%, 100% { opacity: .88; }
+  50% { opacity: 1; }
+}
+@media (max-width: 767px) {
+  section.container.reveal:has(.ecosystem-network) {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+    overflow: hidden;
+  }
+  section.container.reveal:has(.ecosystem-network) .flex.justify-center.mt-10 {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 32px;
+    overflow: hidden;
+  }
+  .ecosystem-network {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+  .ecosystem-network .eco-core { animation: ecosystem-core-safe 5s ease-in-out infinite; }
+  .ecosystem-network .eco-node { animation: ecosystem-node-safe 5s ease-in-out infinite; }
+  .ecosystem-network .eco-node text { font-size: 9px !important; }
+  section.container.reveal:has(.ecosystem-network)::before,
+  section.container.reveal:has(.ecosystem-network)::after { width: 100vw; height: 100vw; top: 58%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ecosystem-network .eco-core,
+  .ecosystem-network .eco-node { animation: none !important; }
+}
