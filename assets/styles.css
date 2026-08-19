@@ -627,3 +627,44 @@ section.container.reveal:has(svg[viewBox="0 0 600 400"]) svg text { animation: e
   section.container.reveal:has(svg[viewBox="0 0 600 400"])::after,
   section.container.reveal:has(svg[viewBox="0 0 600 400"]) * { animation: none !important; }
 }
+
+
+/* Nouvelle topologie radiale : toutes les bulles partent uniquement du noyau iLynx. */
+.ecosystem-network {
+  width: 100%;
+  max-width: 700px;
+  overflow: visible;
+}
+.ecosystem-network .eco-line {
+  stroke-dasharray: 12 10;
+  stroke-linecap: round;
+  animation: ecosystem-line 4.8s ease-in-out infinite alternate, ecosystem-flow 3.2s linear infinite;
+}
+.ecosystem-network .eco-line:nth-child(2) { animation-delay: -.5s, -.4s; }
+.ecosystem-network .eco-line:nth-child(3) { animation-delay: -1s, -.8s; }
+.ecosystem-network .eco-line:nth-child(4) { animation-delay: -1.5s, -1.2s; }
+.ecosystem-network .eco-line:nth-child(5) { animation-delay: -2s, -1.6s; }
+.ecosystem-network .eco-line:nth-child(6) { animation-delay: -2.5s, -2s; }
+.ecosystem-network .eco-particle { animation: none !important; }
+.ecosystem-network .eco-nodes .eco-node { transform-box: fill-box; transform-origin: center; animation: ecosystem-node 4.8s ease-in-out infinite; }
+.ecosystem-network .eco-node:nth-child(2) { animation-delay: -.8s; }
+.ecosystem-network .eco-node:nth-child(3) { animation-delay: -1.6s; }
+.ecosystem-network .eco-node:nth-child(4) { animation-delay: -2.4s; }
+.ecosystem-network .eco-node:nth-child(5) { animation-delay: -3.2s; }
+.ecosystem-network .eco-node:nth-child(6) { animation-delay: -4s; }
+.ecosystem-network .eco-node:nth-child(7) { animation-delay: -4.8s; }
+.ecosystem-network .eco-node text { pointer-events: none; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.ecosystem-network .eco-core { transform-box: fill-box; transform-origin: center; animation: ecosystem-core 4.2s ease-in-out infinite; }
+.ecosystem-network .eco-orbit-one { transform-box: fill-box; transform-origin: center; animation: ecosystem-orbit 20s linear infinite; }
+.ecosystem-network .eco-orbit-two { transform-box: fill-box; transform-origin: center; animation: ecosystem-orbit 15s linear infinite reverse; }
+@media (max-width: 767px) {
+  .ecosystem-network { width: 112%; max-width: none; margin-left: -6%; }
+  .ecosystem-network .eco-node text { font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ecosystem-network .eco-line,
+  .ecosystem-network .eco-node,
+  .ecosystem-network .eco-core,
+  .ecosystem-network .eco-orbit-one,
+  .ecosystem-network .eco-orbit-two { animation: none !important; }
+}
